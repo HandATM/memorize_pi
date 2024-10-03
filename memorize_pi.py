@@ -165,7 +165,7 @@ def onclick(number):
 DISPLAY = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('Memorize PI Dights')
 
-icon_image = pygame.image.load('related_files/icon.png')
+icon_image = pygame.image.load('related_files/memorize_pi_icon.png')
 icon_image = pygame.transform.scale(icon_image, (32, 32))
 pygame.display.set_icon(icon_image)
 
@@ -208,7 +208,7 @@ def show_history():
     if src == '': return None
 
     src = src.splitlines()
-    datas = [{'Time': t, 'Dights': dd} for (dd, t) in [((a.split(' ')[0], " ".join(a.split(' ')[1:]),)) for a in src]]
+    datas = [{'Time': t, 'Dights': dd} for (dd, t) in [((a.split(' ')[0], ' '.join(a.split(' ')[1:]),)) for a in src]]
 
     ranks = sorted(datas, key = lambda x: int(x['Dights']), reverse=True)
     for idx in range(len(ranks)): ranks[idx]['rank'] = idx + 1
@@ -359,4 +359,4 @@ while running:
 # exit (quit)
 with open(history_file_name, 'a') as f:
     now = datetime.now()
-    f.write(f'{dight} {now.year}/{now.month}/{now.day} {now.hour}:{now.minute}:{now.second}\n')
+    f.write(f'{max(0, dight)} {now.year}/{now.month}/{now.day} {now.hour}:{now.minute}:{now.second}\n')
