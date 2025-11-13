@@ -20,5 +20,5 @@
             - datetime: default package (Don't install with pip)
 
     How to clone (with git):
-        - url: https://github.com/Math-dna/memorize_pi.git
-        ===> command - "git clone https://github.com/Math-dna/memorize_pi.git
+        - url: https://github.com/HandATM/memorize_pi.git
+        ===> command - "git clone https://github.com/HandATM/memorize_pi.git
